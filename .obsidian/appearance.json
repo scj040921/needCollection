@@ -1,8 +1,10 @@
 {
-  "cssTheme": "Ultra Lobster",
+  "cssTheme": "Blue Topaz",
   "interfaceFontFamily": "MiSans",
   "textFontFamily": "MiSans",
   "monospaceFontFamily": "MiSans",
   "baseFontSize": 13,
-  "baseFontSizeAction": true
+  "baseFontSizeAction": true,
+  "theme": "moonstone",
+  "accentColor": ""
 }
