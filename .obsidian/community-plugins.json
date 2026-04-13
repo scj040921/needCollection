@@ -1,5 +1,10 @@
 [
   "obsidian-git",
   "obsidian-enhancing-export",
-  "terminal"
+  "terminal",
+  "obsidian-linter",
+  "obsidian-excalidraw-plugin",
+  "better-export-pdf",
+  "obsidian-export-image",
+  "obsidian-auto-link-title"
 ]
