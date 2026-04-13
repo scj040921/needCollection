@@ -1,4 +1,8 @@
 {
   "cssTheme": "",
-  "interfaceFontFamily": "MiSans"
+  "interfaceFontFamily": "MiSans",
+  "textFontFamily": "MiSans",
+  "monospaceFontFamily": "MiSans",
+  "baseFontSize": 13,
+  "baseFontSizeAction": true
 }
