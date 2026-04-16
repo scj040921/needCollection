@@ -44,4 +44,9 @@
 2. 客户端需要重新复制
 ## 升级指南：
 ### 直接升级：
-1. 
+1. 操作系统兼容性检查：
+    - 要求：Windows Server 2012 R2 或 Windows 8.1 及更高版本
+2. 清理http-custom.conf配置文件 ，检查并删除以下过时配置项
+    - SSL3.0相关配置
+    - MaxMemFree指令
+    - mod_mpm_winnt相关配置
