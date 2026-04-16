@@ -50,3 +50,5 @@
     - SSL3.0相关配置
     - MaxMemFree指令
     - mod_mpm_winnt相关配置
+    - mod_authz_svn 相关配置
+3. 客户端 TLS/SSL 兼容性检查
