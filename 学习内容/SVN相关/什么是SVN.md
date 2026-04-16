@@ -7,4 +7,11 @@
 	   2. 真实的版本历史：
 	      Subversion，可以增加（add）、删除（delete）、复制（copy）和重命名（rename）。所有的新加的文件都从一个新的、干净的版本开始。
 	   3. 自动提交：
-	      一个提交动作，不是全部更新到了档案库中，就是完全不更新。
+	      一个提交动作，不是全部更新到了档案库中，就是完全不更新。防止部分成功提交时出现的问题。
+3. 基本概念
+	- Repository(源代码库)：源代码统一存放的地方。
+	- Checkout(提取)：当你手上没有源代码的时候，你需要从repository checkout一份。
+	- Commit（提交）：当已经修改了代码，就需要commit到repository
+	- Update(更新)：当你已经Checkout了一份源代码，Update以后据可以和Repository上的源代码同步
+4. 工作流程
+	1. 确认本地是否有项目代码，如果没有就从Repositorty中Checkout一份到本地，有的话就Update一下，把可能发生了变动的代码同步到本地。
