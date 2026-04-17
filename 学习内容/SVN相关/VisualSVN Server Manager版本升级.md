@@ -51,4 +51,6 @@
     - MaxMemFree指令
     - mod_mpm_winnt相关配置
     - mod_authz_svn 相关配置
-3. 客户端 TLS/SSL 兼容性检查
+3. 客户端 TLS/SSL 兼容性检查：
+    - 升级客户端到支持 TLS 1.2 的版本，或 
+    -  临时启用 "Legacy" TLS/SSL 兼容模式
