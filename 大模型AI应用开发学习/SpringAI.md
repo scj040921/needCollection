@@ -12,3 +12,4 @@
 - 为数据工程提供ETL（数据抽取、转换和加载）框架
 - 支持SpingBoot自动配置和快速起动，便于管理AI模型和管理向量库
 # Spring AI快速入门
+我的deepseek API key:  sk-f92c680bffa34db5bd2f3491cbaded7d
