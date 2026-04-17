@@ -13,3 +13,14 @@
 - 支持SpingBoot自动配置和快速起动，便于管理AI模型和管理向量库
 # Spring AI快速入门
 我的deepseek API key:  sk-f92c680bffa34db5bd2f3491cbaded7d
+# SpringAI的聊天模型
+## 概述
+- SpringAI的聊天模型API为开发者提供了一条便捷通道，能够将强大的AI驱动的聊天完成功能无缝集成到各类应用中。这一API不仅工作机制高效，而且设计理念极为先进，旨在实现简单易用与高度可移植性，让开发者能以极少的代码改动在不同AI模型间自由切换，充分契合Spring框架一贯秉承的模块化与可互换性原则。
+## ChatClient接口
+ChatClient是一个接口，它定义了一个与聊天服务交互的客户端。这个接口主要用于创建聊天接口客户端对象，设置请求规范，以及发起聊天请求。
+## ChatModel接口
+- ChatModel接口作为核心，定义了与AI模型交互的基本方法。它继承自Model<Prompt,ChatResponse>,提供了两个重载的call方法：
+     1. call(String message)
+     2. cal(Prompt prompt)
+- 在此接口中，带有String参数的call方法简化了实际的使用，避免了更复杂的Prompt和ChatResponse类。但是在实际应用中，更常见的是使用ChatResponse call()方法，该方法采用Prompt实例并返回ChatResponse。
+- ChatClient底层是使用ChatModel为属性的，在初始化ChatClient时可以指定ChatModle。
