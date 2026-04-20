@@ -42,4 +42,4 @@
      - **AuthzSVN权威**
      - **AuthzSVNNoAuthWhenAnonymousAllowed**
      - **授权SVN存储库相对访问文件**
-13. 
+13. **确认没有与新版本不兼容的自定义设置**:
