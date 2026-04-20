@@ -43,3 +43,5 @@
      - **AuthzSVNNoAuthWhenAnonymousAllowed**
      - **授权SVN存储库相对访问文件**
 13. **确认没有与新版本不兼容的自定义设置**:
+    **如果您在httpd-custom.conf**文件 中进行了任何自定义设置，则此步骤适用于 VisualSVN Server 的升级。VisualSVN Server 3.7 将**Apache HTTP Server**升级到了2.4 版本，并对相关的 httpd.conf 文件进行了重大更改。因此，升级后您的自定义设置很可能会失效。
+    **如果您的 VisualSVN Server 实例中的 %VISUALSVN_SERVER%conf\ httpd-custom.conf**文件不为空， 强烈建议在预生产环境中运行测试升级。
