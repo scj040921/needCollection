@@ -9,9 +9,10 @@
  - 直接升级（官方推荐）
 ## 3.注意事项
 ### 升级前检查清单：
-1. **确认服务器上安装的操作系统仍然受支持**：从VisualSVN Server 5.0开始，最低支持的操作系统为Windows Server 2012 R2 和 Windows 8.1。如果当前操作系统不再受支持， 则需要升级操作系统或 将 VisualSVN Server 实例迁移到另一台计算机。
+1. **确认服务器上安装的操作系统仍然受支持**：
+    从VisualSVN Server 5.0开始，最低支持的操作系统为Windows Server 2012 R2 和 Windows 8.1。如果当前操作系统不再受支持， 则需要升级操作系统或 将 VisualSVN Server 实例迁移到另一台计算机。
 2. **不要卸载当前的VisualSVN服务器实例**：
-   安装新版本之前，请勿**卸载**现有的 VisualSVN Server 实例。VisualSVN Server 的设计初衷是始终覆盖安装现有版本。卸载 VisualSVN Server 实例可能会导致重要的服务器设置丢失。
+    安装新版本之前，请勿**卸载**现有的 VisualSVN Server 实例。VisualSVN Server 的设计初衷是始终覆盖安装现有版本。卸载 VisualSVN Server 实例可能会导致重要的服务器设置丢失。
 3. **确保拥有计算机的管理员权限**：
     此步骤适用于所有 VisualSVN Server 版本的升级。要成功升级，应该使用具有管理员权限的帐户运行 VisualSVN Server 安装包。
 4. **从 httpd-custom.conf 中移除与 SSL 3.0 协议版本相关的自定义设置**：
@@ -56,3 +57,4 @@
 13. **确认没有与新版本不兼容的自定义设置**:
     **如果您在httpd-custom.conf**文件 中进行了任何自定义设置，则此步骤适用于 VisualSVN Server 的升级。VisualSVN Server 3.7 将**Apache HTTP Server**升级到了2.4 版本，并对相关的 httpd.conf 文件进行了重大更改。因此，升级后您的自定义设置很可能会失效。
     **如果您的 VisualSVN Server 实例中的 %VISUALSVN_SERVER%conf\ httpd-custom.conf**文件不为空， 强烈建议在预生产环境中运行测试升级。
+### 升级后检查清单：
