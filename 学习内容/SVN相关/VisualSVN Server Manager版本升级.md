@@ -20,21 +20,26 @@
 6. **检查 TLS/SSL 兼容级别设置（不再支持 SSL 3.0）**：VisualSVN Server 5.0 将不再支持 SSL 3.0 协议（即使启用了旧版 TLS/SSL 兼容级别）。对于几乎所有与服务器交互的现代客户端而言，这不会造成任何负面影响。但是，不支持 SSL 3.0 以上协议的旧版客户端在服务器升级后会收到访问错误。如果您有此类客户端（例如基于 Java 5 或更早版本的客户端），则需要事先将其升级。
 7. **从 httpd-custom.conf 中移除与 MaxMemFree 指令相关的自定义设置**：此步骤适用于从 VisualSVN Server 4.3 及更早版本升级，这些版本在 %VISUALSVN_SERVER%conf\ **httpd-custom.conf**文件中进行了自定义。
    VisualSVN Server 5.0 切换到了一种新的内存分配方案，该方案不再包含`MaxMemFree`配置指令。升级到 VisualSVN Server 5.0 之前，您应该检查**httpd-custom.conf**文件并删除以下指令： **最大内存自由**。
-8. **如果需要自定义权限才能访问存储库，请跳过在安装程序中启用搜索索引的步骤**：如果需要自定义权限才能访问服务器上的存储库（这种情况通常发生在存储库 [存储在网络共享上](https://www.visualsvn.com/support/topic/00022/ "知识库22：将存储库存储在网络共享上")且权限已授予[专用帐户](https://www.visualsvn.com/support/topic/00024/ "KB24：配置 VisualSVN HTTP 服务以在专用用户帐户下运行")时），请跳过在安装程序中启用搜索索引的步骤。
-9. **从 httpd-custom.conf 中移除与 mod_mpm_winnt 相关的自定义设置**：此步骤适用于从 VisualSVN Server 4.1 或更早版本升级，并且 %VISUALSVN_SERVER%conf\ **httpd-custom.conf**文件中也有自定义设置的情况。
-   VisualSVN Server 4.2 使用的是**mod_mpm_visualsvn**模块而不是 **mod_mpm_winnt**模块，因此某些自定义配置会导致配置错误，VisualSVN HTTP 服务将无法启动。您应该仔细检查并移除这些自定义配置。
+8. **如果需要自定义权限才能访问存储库，请跳过在安装程序中启用搜索索引的步骤**：
+   如果需要自定义权限才能访问服务器上的存储库（这种情况通常发生在存储库 [存储在网络共享上](https://www.visualsvn.com/support/topic/00022/ "知识库22：将存储库存储在网络共享上")且权限已授予[专用帐户](https://www.visualsvn.com/support/topic/00024/ "KB24：配置 VisualSVN HTTP 服务以在专用用户帐户下运行")时），请跳过在安装程序中启用搜索索引的步骤。
+9. **从 httpd-custom.conf 中移除与 mod_mpm_winnt 相关的自定义设置**：
+    此步骤适用于从 VisualSVN Server 4.1 或更早版本升级，并%VISUALSVN_SERVER%conf\ **httpd-custom.conf**文件中也有自定义设置的情况。
+    VisualSVN Server 4.2 使用的是**mod_mpm_visualsvn**模块而不是 **mod_mpm_winnt**模块，因此某些自定义配置会导致配置错误，VisualSVN HTTP 服务将无法启动。您应该仔细检查并移除这些自定义配置。
    **升级前，请考虑从httpd-custom.conf**文件 中删除以下不受支持的指令：
      - **每个子节点的线程数**
      - **线程限制**
-10. **检查您是否需要更新 VisualSVN 服务器许可证**：此步骤适用于从 VisualSVN Server 3.9 及更早版本升级。
+10. **检查您是否需要更新 VisualSVN 服务器许可证**：
+    此步骤适用于从 VisualSVN Server 3.9 及更早版本升级。
     从 4.0 版本开始，VisualSVN Server 可以在三种类型的许可证下运行：社区版、基础版或企业版。
     如果您使用的是 VisualSVN Server 企业版，并且拥有未过期的维护订阅许可证，则升级到新的许可模式是完全透明的。
     如果您使用的是**标准版**，升级到 4.1 或更高版本将自动激活功能几乎相同的社区版许可证。但是，在以下两种情况下，升级期间社区版许可证将不可用：
     - 当**Subversion 用户帐户超过 15 个**时，社区版许可证最多允许使用 15 个 Subversion 用户帐户。
     - 当您使用**Windows（基本）身份验证**时。从 4.0 版本开始，Windows 身份验证仅适用于企业版许可证。
     对于上述例外情况，您可以选择提供足够的许可证，或者生成一个免费的评估许可证，允许您在 45 天内使用 VisualSVN Server 的所有功能。如果选择后者，您需要在评估期结束前提供足够的 Essential 或 Enterprise 许可证。
-11. **确认未使用 Internet Explorer 10 访问 VisualSVN 服务器 Web 界面**：从 VisualSVN Server 4.0 开始，最低支持的 IE 版本为 **Internet Explorer 11**如果您仍在使用 Internet Explorer 10，则需要升级您的浏览器。
-12. **从 httpd-custom.conf 中移除与 mod_authz_svn 相关的自定义设置**：VisualSVN Server 3.9 不包含**mod_authz_svn模块，因此所有使用此模块指令的自定义设置都将停止工作。您应该仔细检查并移除这些自定义设置。以下是升级到 VisualSVN Server 4.1 之前，您应该考虑从httpd-custom.conf**文件 中移除的指令列表：
+11. **确认未使用 Internet Explorer 10 访问 VisualSVN 服务器 Web 界面**：
+    从 VisualSVN Server 4.0 开始，最低支持的 IE 版本为 **Internet Explorer 11**如果您仍在使用 Internet Explorer 10，则需要升级您的浏览器。
+12. **从 httpd-custom.conf 中移除与 mod_authz_svn 相关的自定义设置**：
+    VisualSVN Server 3.9 不包含**mod_authz_svn模块，因此所有使用此模块指令的自定义设置都将停止工作。您应该仔细检查并移除这些自定义设置。以下是升级到 VisualSVN Server 4.1 之前，您应该考虑从httpd-custom.conf**文件 中移除的指令列表：
      - **AuthzForceUsernameCase**
      - **授权SVN组文件**
      - **授权SVN访问文件**
