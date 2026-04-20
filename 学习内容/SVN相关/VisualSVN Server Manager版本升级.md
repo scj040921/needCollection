@@ -68,4 +68,6 @@
    [密码猜测攻击防护](https://www.visualsvn.com/server/features/password-attack-protection/) 是一种反制措施，旨在防止攻击者通过系统地尝试大量不同的用户名和密码组合来发现 VisualSVN 服务器的用户登录/身份验证凭据。
    启用此功能后，VisualSVN 服务器可以暂时阻止在短时间内产生过多身份验证失败的 IP 地址。
    *强烈建议**使用独立**Subversion 身份验证**模式或**具有基本身份验证的 Windows 身份验证模式**的 VisualSVN Server 安装执行 此步骤。*
-4. **
+4. **安排存储库备份验证**：
+   “验证备份”计划后台作业有助于确保 VisualSVN 服务器创建的定期备份可读、可还原，并在必要时随时可用。该作业会自动验证“备份存储库”后台作业创建的备份。
+   **强烈建议**所有安装了 VisualSVN Server 并配置了计划存储库备份作业的用户 创建“验证备份”作业。
