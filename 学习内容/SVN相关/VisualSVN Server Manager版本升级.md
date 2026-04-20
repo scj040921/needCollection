@@ -58,3 +58,5 @@
     **如果您在httpd-custom.conf**文件 中进行了任何自定义设置，则此步骤适用于 VisualSVN Server 的升级。VisualSVN Server 3.7 将**Apache HTTP Server**升级到了2.4 版本，并对相关的 httpd.conf 文件进行了重大更改。因此，升级后您的自定义设置很可能会失效。
     **如果您的 VisualSVN Server 实例中的 %VISUALSVN_SERVER%conf\ httpd-custom.conf**文件不为空， 强烈建议在预生产环境中运行测试升级。
 ### 升级后检查清单：
+1. **启用基于 IP 的基本 Windows 身份验证限制**：
+   从 5.4 版本开始，您可以将基本 Windows 身份验证的使用范围限制为仅允许特定 IP 地址的客户端使用，这些客户端无法使用集成 Windows 身份验证。这样，您可以仅为某些用户或客户端启用基本 Windows 身份验证，而不会降低其他用户的安全级别。
