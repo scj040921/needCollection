@@ -66,5 +66,6 @@
    *运行或管理 VisualSVN 服务器不需要 openssl.exe 命令行实用程序。*
 3. **启用密码猜测攻击防护**：
    [密码猜测攻击防护](https://www.visualsvn.com/server/features/password-attack-protection/) 是一种反制措施，旨在防止攻击者通过系统地尝试大量不同的用户名和密码组合来发现 VisualSVN 服务器的用户登录/身份验证凭据。
-
-启用此功能后，VisualSVN 服务器可以暂时阻止在短时间内产生过多身份验证失败的 IP 地址。
+   启用此功能后，VisualSVN 服务器可以暂时阻止在短时间内产生过多身份验证失败的 IP 地址。
+   *强烈建议**使用独立**Subversion 身份验证**模式或**具有基本身份验证的 Windows 身份验证模式**的 VisualSVN Server 安装执行 此步骤。*
+4. **
