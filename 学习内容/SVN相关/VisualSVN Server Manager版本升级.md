@@ -63,3 +63,8 @@
 2. **确定您的环境是否依赖于捆绑的 openssl.exe 命令行实用程序**：
    从 5.4 版本开始，VisualSVN Server默认 不再安装 **openssl.exe命令行实用程序**。而且，默认情况下，升级到 5.4 版本也会移除该可执行文件。
    需要确定您或您的环境是否依赖于服务器安装目录中的 openssl.exe 文件。如果您发现 VisualSVN Server 安装中必须包含 openssl.exe，请联系 [support@visualsvn.com](mailto:support@visualsvn.com)获取进一步帮助。
+   *运行或管理 VisualSVN 服务器不需要 openssl.exe 命令行实用程序。*
+3. **启用密码猜测攻击防护**：
+   [密码猜测攻击防护](https://www.visualsvn.com/server/features/password-attack-protection/) 是一种反制措施，旨在防止攻击者通过系统地尝试大量不同的用户名和密码组合来发现 VisualSVN 服务器的用户登录/身份验证凭据。
+
+启用此功能后，VisualSVN 服务器可以暂时阻止在短时间内产生过多身份验证失败的 IP 地址。
