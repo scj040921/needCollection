@@ -18,4 +18,11 @@
 5. **确认未使用 Internet Explorer 访问 VisualSVN 服务器 Web 界面**：从 5.0 版本开始，VisualSVN 服务器 Web 界面 **不再支持 Internet Explorer**。如果您使用 Internet Explorer 访问 Web 界面，则需要升级到 Microsoft Edge 或切换到其他受支持的浏览器。微软鼓励用户迁移到具有 Internet Explorer (IE) 模式的 Microsoft Edge 浏览器。
    *此更改仅影响客户端存储库 Web 界面，不影响任何服务器管理功能或 VisualSVN 服务器管理器控制台。*
 6. **检查 TLS/SSL 兼容级别设置（不再支持 SSL 3.0）**：VisualSVN Server 5.0 将不再支持 SSL 3.0 协议（即使启用了旧版 TLS/SSL 兼容级别）。对于几乎所有与服务器交互的现代客户端而言，这不会造成任何负面影响。但是，不支持 SSL 3.0 以上协议的旧版客户端在服务器升级后会收到访问错误。如果您有此类客户端（例如基于 Java 5 或更早版本的客户端），则需要事先将其升级。
-7. **从 httpd-custom.conf 中移除与 MaxMemFree 指令相关的自定义设置**：
+7. **从 httpd-custom.conf 中移除与 MaxMemFree 指令相关的自定义设置**：此步骤适用于从 VisualSVN Server 4.3 及更早版本升级，这些版本在 %VISUALSVN_SERVER%conf\ **httpd-custom.conf**文件中进行了自定义。
+   VisualSVN Server 5.0 切换到了一种新的内存分配方案，该方案不再包含`MaxMemFree`配置指令。升级到 VisualSVN Server 5.0 之前，您应该检查**httpd-custom.conf**文件并删除以下指令： **最大内存自由**。
+8. **如果需要自定义权限才能访问存储库，请跳过在安装程序中启用搜索索引的步骤**：如果需要自定义权限才能访问服务器上的存储库（这种情况通常发生在存储库 [存储在网络共享上](https://www.visualsvn.com/support/topic/00022/ "知识库22：将存储库存储在网络共享上")且权限已授予[专用帐户](https://www.visualsvn.com/support/topic/00024/ "KB24：配置 VisualSVN HTTP 服务以在专用用户帐户下运行")时），请跳过在安装程序中启用搜索索引的步骤。
+9. **从 httpd-custom.conf 中移除与 mod_mpm_winnt 相关的自定义设置**：此步骤适用于从 VisualSVN Server 4.1 或更早版本升级，并且 %VISUALSVN_SERVER%conf\ **httpd-custom.conf**文件中也有自定义设置的情况。
+   VisualSVN Server 4.2 使用的是**mod_mpm_visualsvn**模块而不是 **mod_mpm_winnt**模块，因此某些自定义配置会导致配置错误，VisualSVN HTTP 服务将无法启动。您应该仔细检查并移除这些自定义配置。
+   **升级前，请考虑从httpd-custom.conf**文件 中删除以下不受支持的指令：
+     - **每个子节点的线程数**
+     - **线程限制**
