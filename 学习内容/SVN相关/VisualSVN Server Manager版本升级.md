@@ -115,4 +115,11 @@
     - **SSL协议**
     - **SSL密码套件**
     从 VisualSVN Server 3.6 版本开始，TLS/SSL 安全设置需要通过 VisualSVN Server 的用户界面进行调整。
-15. 
+15. **从 httpd-custom.conf 中移除对 Subversion 内存缓存大小的自定义设置**：
+    VisualSVN Server 3.6 提供了一个用户界面，用于自定义 Subversion 内存对象缓存的大小，以优化服务器性能。如果您的服务器**httpd-custom.conf文件被修改以更改 Subversion 内存缓存大小，这些自定义设置可能会与核心httpd.conf配置文件中的设置冲突。您应该仔细检查并移除这些自定义设置。
+
+升级到 VisualSVN Server 4.1 后， 您应该考虑从**httpd-custom.conf**文件 中移除以下指令 ：
+
+- **SVN内存缓存大小**
+
+从 VisualSVN Server 3.6 开始，Subversion 内存缓存大小需要通过 VisualSVN Server 的用户界面进行调整。
