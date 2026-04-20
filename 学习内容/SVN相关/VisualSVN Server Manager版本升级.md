@@ -97,4 +97,17 @@
     - 如果您看到以下警告，则说明证书存在问题，导致服务器无法使用 TLS 1.3**：
          此证书目前阻止服务器上使用 TLS 1.3。
         您需要生成并安装新的 TLS 证书来解决此问题。
-11. **将存储库升级到 Subversion 1.10 格式
+11. **将存储库升级到 Subversion 1.10 格式**：
+    您需要将存储库升级到 Subversion 1.10 格式，才能享受 VisualSVN Server 3.9 和 Subversion 1.10 中实现的性能改进。
+12. **请确保服务器计算机上已安装 PowerShell 4.0 或更高版本**：
+    [使用Backup-SvnRepository](https://www.visualsvn.com/support/topic/00088/#Backup-SvnRepository) 和 [Restore-SvnRepository](https://www.visualsvn.com/support/topic/00088/#Restore-SvnRepository) PowerShell cmdlet 创建和还原加密备份，或为远程备份目标提供自定义凭据时，需要 PowerShell 4.0 或更高版本 。我们建议您确保服务器计算机上已安装 PowerShell 4.0 或更高版本。
+    PowerShell 没有独立安装程序，它仅作为 Windows 管理框架 (WMF) 的一部分提供。您需要升级到 WMF 4.0 才能升级到 PowerShell 4.0。
+    *安装 WMF 4.0 时可能会出现以下问题：在未运行 .NET Framework 4.5 的计算机上安装 WMF 4.0 时，系统会报告安装成功，但 WMF 4.0 的组件（例如 Windows PowerShell、WMI 等）实际上并未更新。要解决此问题，请安装 .NET Framework 4.5 并再次运行 WMF 4.0 安装程序。有关此问题的更多信息，请阅读 MSDN 上 PowerShell 团队的博客文章“ [WMF 4.0 – 已知问题：未安装 .NET Framework 4.5 时部分安装”。](https://blogs.msdn.microsoft.com/powershell/2013/10/28/wmf-4-0-known-issue-partial-installation-without-net-framework-4-5/)*
+13. **从 httpd-custom.conf 中移除对动态 HTTP 压缩所做的自定义设置**：
+    VisualSVN Server 3.7 对动态 HTTP 压缩进行了重大改进，并提供了一个用户界面来调整相关设置。如果您的服务器 httpd-custom.conf文件被修改以自定义动态 HTTP 压缩设置，这些自定义设置可能会与核心**httpd.conf配置文件**中的设置冲突 。您应该仔细检查并移除这些自定义设置。
+    以下是升级到 VisualSVN Server 4.1 后， 您应该考虑从**httpd-custom.conf**文件 中移除的指令列表 ：
+    - **SVN压缩级别**
+    - **加载模块 mod_deflate**
+    从 VisualSVN Server 3.7 开始，动态 HTTP 压缩设置只能通过 VisualSVN Server 的用户界面进行调整。
+14. **从 httpd-custom.conf 文件中移除对 TLS/SSL 安全设置的自定义项**：
+    
