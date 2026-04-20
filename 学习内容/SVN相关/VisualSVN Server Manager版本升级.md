@@ -121,4 +121,6 @@
     - **SVN内存缓存大小**
     从 VisualSVN Server 3.6 开始，Subversion 内存缓存大小需要通过 VisualSVN Server 的用户界面进行调整。
 16. **计划存储库备份**：
-    
+    VisualSVN Server 3.6 内置了 Subversion 版本库的[备份和还原](https://www.visualsvn.com/server/features/backup/) 功能。该功能可帮助您每日备份任意大小的版本库，且不会影响性能和用户操作。我们建议您添加计划备份作业，以确保版本库得到妥善备份。
+17. **计划库验证**：
+    VisualSVN Server 3.6 内置了 Subversion 版本库的定时验证功能。验证作业会检查版本库的完整性。定期验证版本库对于及早发现磁盘故障导致的版本库损坏至关重要。
