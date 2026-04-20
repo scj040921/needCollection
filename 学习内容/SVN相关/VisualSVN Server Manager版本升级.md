@@ -111,10 +111,8 @@
     从 VisualSVN Server 3.7 开始，动态 HTTP 压缩设置只能通过 VisualSVN Server 的用户界面进行调整。
 14. **从 httpd-custom.conf 文件中移除对 TLS/SSL 安全设置的自定义项**：
     VisualSVN Server 3.6 提供了一个用户界面，用于自定义 TLS/SSL 安全兼容级别。如果您的服务器 **httpd-custom.conf 文件**被修改以自定义 TLS/SSL 设置，这些自定义设置可能会与核心 **httpd.conf**配置文件中的设置冲突。您应该仔细检查并移除这些自定义设置。
-
-以下是升级到 VisualSVN Server 4.1 后， 您应该考虑从**httpd-custom.conf**文件 中移除的指令列表 ：
-
-- **SSL协议**
-- **SSL密码套件**
-
-从 VisualSVN Server 3.6 版本开始，TLS/SSL 安全设置需要通过 VisualSVN Server 的用户界面进行调整。
+    以下是升级到 VisualSVN Server 4.1 后， 您应该考虑从**httpd-custom.conf**文件 中移除的指令列表 ：
+    - **SSL协议**
+    - **SSL密码套件**
+    从 VisualSVN Server 3.6 版本开始，TLS/SSL 安全设置需要通过 VisualSVN Server 的用户界面进行调整。
+15. 
