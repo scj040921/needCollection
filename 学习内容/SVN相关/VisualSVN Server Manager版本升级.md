@@ -34,4 +34,12 @@
     - 当您使用**Windows（基本）身份验证**时。从 4.0 版本开始，Windows 身份验证仅适用于企业版许可证。
     对于上述例外情况，您可以选择提供足够的许可证，或者生成一个免费的评估许可证，允许您在 45 天内使用 VisualSVN Server 的所有功能。如果选择后者，您需要在评估期结束前提供足够的 Essential 或 Enterprise 许可证。
 11. **确认未使用 Internet Explorer 10 访问 VisualSVN 服务器 Web 界面**：从 VisualSVN Server 4.0 开始，最低支持的 IE 版本为 **Internet Explorer 11**如果您仍在使用 Internet Explorer 10，则需要升级您的浏览器。
-12. **从 httpd-custom.conf 中移除与 mod_authz_svn 相关的自定义设置**：
+12. **从 httpd-custom.conf 中移除与 mod_authz_svn 相关的自定义设置**：VisualSVN Server 3.9 不包含**mod_authz_svn模块，因此所有使用此模块指令的自定义设置都将停止工作。您应该仔细检查并移除这些自定义设置。以下是升级到 VisualSVN Server 4.1 之前，您应该考虑从httpd-custom.conf**文件 中移除的指令列表：
+     - **AuthzForceUsernameCase**
+     - **授权SVN组文件**
+     - **授权SVN访问文件**
+     - **AuthzSVNAnonymous**
+     - **AuthzSVN权威**
+     - **AuthzSVNNoAuthWhenAnonymousAllowed**
+     - **授权SVN存储库相对访问文件**
+13. 
