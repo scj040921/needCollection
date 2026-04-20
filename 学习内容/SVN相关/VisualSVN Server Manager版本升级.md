@@ -81,4 +81,9 @@
    *VisualSVN Server 5.0 中的 现代TLS/SSL 兼容级别仅支持 TLS 1.3。*
 6. **启用存储库全文搜索**：
    VisualSVN Server 5.0 提供了全新的 [**全文搜索功能**](https://www.visualsvn.com/server/features/search) ，允许用户通过 Web 界面查找包含指定内容的文件。*如果需要自定义权限才能访问服务器上的存储库（当存储库 [存储在网络共享上](https://www.visualsvn.com/support/topic/00022/ "知识库22：将存储库存储在网络共享上")并且权限授予[专用帐户](https://www.visualsvn.com/support/topic/00024/ "KB24：配置 VisualSVN HTTP 服务以在专用用户帐户下运行")时，这种情况经常发生），请不要忘记在启用搜索索引之前 [为 VisualSVN 搜索索引服务配置适当的权限](https://www.visualsvn.com/support/topic/00197/ "KB197：配置 VisualSVN 搜索索引服务以在专用用户帐户下运行") 。*
-7. **启用管理员电子邮件通知
+7. **启用管理员电子邮件通知**：
+   VisualSVN Server 5.0 支持**管理员电子邮件通知**。这些通知会在后台作业完成后发送，告知管理员作业的运行状态。如果您的服务器配置了任何后台作业，建议启用管理员电子邮件通知。
+8. **检查 TLS/SSL 兼容级别设置（3DES 现在属于传统模式）**：
+   VisualSVN Server 4.2**中级**TLS/SSL 配置不再使用过时的 3DES 加密套件。这对与服务器交互的现代客户端没有任何负面影响。但是，仅支持 3DES 的旧版客户端（例如 Windows XP 或更早版本上的 Internet Explorer 8）在服务器升级后会收到访问错误。
+   如果由于客户端版本过旧而收到访问错误，请将其更新到更新的兼容版本（支持现代 AES 加密套件）。如果由于某种原因无法立即更新，请将 TLS/SSL 设置切换为传统配置。
+9. 
