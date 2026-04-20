@@ -61,5 +61,5 @@
 1. **启用基于 IP 的基本 Windows 身份验证限制**：
    从 5.4 版本开始，您可以将基本 Windows 身份验证的使用范围限制为仅允许特定 IP 地址的客户端使用，这些客户端无法使用集成 Windows 身份验证。这样，您可以仅为某些用户或客户端启用基本 Windows 身份验证，而不会降低其他用户的安全级别。
 2. **确定您的环境是否依赖于捆绑的 openssl.exe 命令行实用程序**：
-   从 5.4 版本开始，VisualSVN Server默认 不再安装 **openssl.exe命令行实用程序。而且，默认情况下，****升级到 5.4 版本也会移除该可执行文件**。
-   
+   从 5.4 版本开始，VisualSVN Server默认 不再安装 **openssl.exe命令行实用程序**。而且，默认情况下，升级到 5.4 版本也会移除该可执行文件。
+   需要确定您或您的环境是否依赖于服务器安装目录中的 openssl.exe 文件。如果您发现 VisualSVN Server 安装中必须包含 openssl.exe，请联系 [support@visualsvn.com](mailto:support@visualsvn.com)获取进一步帮助。
