@@ -78,6 +78,7 @@
     - Subversion 命令行客户端版本 1.8.x 或更早版本。
     - 所有基于 Java 7 或更早版本的客户端。
    如果旧版本客户端出现访问错误，请考虑将其更新到支持 TLS 1.2 的新版本。如果由于某种原因无法立即更新，请将 TLS/SSL 设置切换为**旧版**配置。
-   *VisualSVN Server 5.0 中的 现代TLS/SSL 兼容级别仅支持 TLS 1.3。***
-6. 
-   
+   *VisualSVN Server 5.0 中的 现代TLS/SSL 兼容级别仅支持 TLS 1.3。*
+6. **启用存储库全文搜索**：
+   VisualSVN Server 5.0 提供了全新的 [**全文搜索功能**](https://www.visualsvn.com/server/features/search) ，允许用户通过 Web 界面查找包含指定内容的文件。*如果需要自定义权限才能访问服务器上的存储库（当存储库 [存储在网络共享上](https://www.visualsvn.com/support/topic/00022/ "知识库22：将存储库存储在网络共享上")并且权限授予[专用帐户](https://www.visualsvn.com/support/topic/00024/ "KB24：配置 VisualSVN HTTP 服务以在专用用户帐户下运行")时，这种情况经常发生），请不要忘记在启用搜索索引之前 [为 VisualSVN 搜索索引服务配置适当的权限](https://www.visualsvn.com/support/topic/00197/ "KB197：配置 VisualSVN 搜索索引服务以在专用用户帐户下运行") 。*
+7. **启用管理员电子邮件通知
