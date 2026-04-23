@@ -36,4 +36,4 @@
 		    - 不去重词袋法
 		    - tf-idf
 		2. 稠密向量
-			- 
+			- 词嵌入（Word Embedding)
