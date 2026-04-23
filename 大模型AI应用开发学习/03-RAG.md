@@ -37,3 +37,6 @@
 		    - tf-idf
 		2. 稠密向量
 			- 词嵌入（Word Embedding)
+				- 训练阶段：输入海量语料让模型不断训练，存在Embedding Model
+				- 应用阶段：将文本输入Embedding Model，得到对应向量
+				- 优点：语义相关性捕捉的很好
