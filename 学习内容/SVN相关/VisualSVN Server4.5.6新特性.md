@@ -19,7 +19,7 @@
 - **Apache HTTP Server 升级**：更好的并发处理能力
 - **内存使用优化**：减少资源消耗
 ### **5. 管理功能增强** 
-- **Server Binding 配置**：支持绑定到特定 IP 地址（您截图中的功能）
+- **Server Binding 配置**：支持绑定到特定 IP 地址
 - **改进的 VisualSVN Server Manager**：更好的批量操作和配置管理
 - **增强的日志系统**：更详细的审计和监控能力
 ### **6. Windows 平台集成改进** 
