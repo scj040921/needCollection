@@ -413,6 +413,17 @@
       "enabled": true,
       "isBuiltIn": true,
       "isEmbeddingModel": true
+    },
+    {
+      "name": "netease-youdao/bce-embedding-base_v1",
+      "provider": "3rd party (openai-format)",
+      "enabled": true,
+      "isBuiltIn": false,
+      "baseUrl": "https://api.siliconflow.cn/v1",
+      "apiKey": "sk-mshrpscvbfjdbcjiqbseftpuplybkpftjhjytmnbrrwlnyxq",
+      "isEmbeddingModel": true,
+      "capabilities": [],
+      "enableCors": true
     }
   ],
   "embeddingRequestsPerMin": 60,
