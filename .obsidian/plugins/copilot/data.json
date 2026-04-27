@@ -16,7 +16,7 @@
   "openRouterAiApiKey": "",
   "xaiApiKey": "",
   "mistralApiKey": "",
-  "deepseekApiKey": "",
+  "deepseekApiKey": "sk-f92c680bffa34db5bd2f3491cbaded7d",
   "amazonBedrockApiKey": "",
   "amazonBedrockRegion": "",
   "siliconflowApiKey": "",
@@ -24,7 +24,7 @@
   "githubCopilotToken": "",
   "githubCopilotTokenExpiresAt": 0,
   "defaultChainType": "llm_chain",
-  "defaultModelKey": "google/gemini-2.5-flash|openrouterai",
+  "defaultModelKey": "deepseek-v4-pro|deepseek",
   "embeddingModelKey": "openai/text-embedding-3-small|openrouterai",
   "temperature": 0.1,
   "maxTokens": 6000,
@@ -79,7 +79,7 @@
     {
       "name": "gpt-5.4",
       "provider": "openai",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "core": true,
       "capabilities": [
@@ -89,7 +89,7 @@
     {
       "name": "gpt-5-mini",
       "provider": "openai",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "core": true,
       "capabilities": [
@@ -99,17 +99,17 @@
     {
       "name": "claude-sonnet-4-6",
       "provider": "anthropic",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "vision",
-        "reasoning"
+        "reasoning",
+        "vision"
       ]
     },
     {
       "name": "gemini-3.1-flash-lite-preview",
       "provider": "google",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "projectEnabled": true,
       "capabilities": [
@@ -119,7 +119,7 @@
     {
       "name": "gemini-2.5-flash",
       "provider": "google",
-      "enabled": true,
+      "enabled": false,
       "isBuiltIn": true,
       "projectEnabled": true,
       "capabilities": [
@@ -132,8 +132,8 @@
       "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "vision",
-        "reasoning"
+        "reasoning",
+        "vision"
       ]
     },
     {
@@ -142,8 +142,8 @@
       "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "vision",
-        "reasoning"
+        "reasoning",
+        "vision"
       ]
     },
     {
@@ -229,8 +229,8 @@
       "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "vision",
-        "reasoning"
+        "reasoning",
+        "vision"
       ]
     },
     {
@@ -239,8 +239,8 @@
       "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "vision",
-        "reasoning"
+        "reasoning",
+        "vision"
       ]
     },
     {
@@ -249,8 +249,8 @@
       "enabled": false,
       "isBuiltIn": true,
       "capabilities": [
-        "vision",
-        "reasoning"
+        "reasoning",
+        "vision"
       ]
     },
     {
@@ -266,13 +266,13 @@
     {
       "name": "deepseek-chat",
       "provider": "deepseek",
-      "enabled": false,
+      "enabled": true,
       "isBuiltIn": true
     },
     {
       "name": "deepseek-reasoner",
       "provider": "deepseek",
-      "enabled": false,
+      "enabled": true,
       "isBuiltIn": true,
       "capabilities": [
         "reasoning"
@@ -281,19 +281,37 @@
     {
       "name": "deepseek-ai/DeepSeek-V3",
       "provider": "siliconflow",
-      "enabled": false,
+      "enabled": true,
       "isBuiltIn": false,
       "baseUrl": "https://api.siliconflow.com/v1"
     },
     {
       "name": "deepseek-ai/DeepSeek-R1",
       "provider": "siliconflow",
-      "enabled": false,
+      "enabled": true,
       "isBuiltIn": false,
       "baseUrl": "https://api.siliconflow.com/v1",
       "capabilities": [
         "reasoning"
       ]
+    },
+    {
+      "name": "deepseek-v4-pro",
+      "provider": "deepseek",
+      "enabled": true,
+      "temperature": 0.22
+    },
+    {
+      "name": "deepseek-v4pro",
+      "provider": "deepseek",
+      "enabled": true,
+      "isBuiltIn": false,
+      "baseUrl": "",
+      "apiKey": "sk-f92c680bffa34db5bd2f3491cbaded7d",
+      "isEmbeddingModel": false,
+      "capabilities": [],
+      "stream": true,
+      "displayName": "deepseek-v4pro"
     }
   ],
   "activeEmbeddingModels": [
