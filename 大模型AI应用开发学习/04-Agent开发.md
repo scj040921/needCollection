@@ -46,3 +46,7 @@ MCP遵循客户端-服务器架构，其中MCP Host——AI应用程序——与
 - **MCP Host**：协调和管理一个或多个MCP Server的人工智能应用程序
 - **MCP Client**：一个组件用于维护与MCP服务器的连接，并从MCP服务器获取上下文，供MCP主机使用
 - **MCP Server**:一个为MCP Client提供上下文的程序
+### MCP的传输协议
+#### Stdio传输
+1. 什么是Stdio:
+   - **stdio(standard I/O)是进程的标准输入/输出接口**
