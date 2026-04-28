@@ -444,7 +444,7 @@
   "passMarkdownImages": true,
   "enableAutonomousAgent": true,
   "enableCustomPromptTemplating": true,
-  "enableSemanticSearchV3": false,
+  "enableSemanticSearchV3": true,
   "enableSelfHostMode": false,
   "enableMiyo": false,
   "selfHostModeValidatedAt": null,
