@@ -68,4 +68,10 @@ MCP遵循客户端-服务器架构，其中MCP Host——AI应用程序——与
     - 支持服务端主动、流式的推送消息
 - 服务端推送的必要性：MCP Server中的工具发生了更新，要主动地向MCP Client推送通知
 #### Streamable HTTP传输（新方案）
-- Streamable HTTP并不是一个标准协议名，而是一个通用描述，指的是基于HTTP协议的“可流式传输”技术。它的核心思想是：在一个HTTP连接里，服务端可以持续不断的发送数据给客户端，客户端边接收边处理，与“流”类似。与传统的
+- Streamable HTTP并不是一个标准协议名，而是一个通用描述，指的是基于HTTP协议的“可流式传输”技术。它的核心思想是：在一个HTTP连接里，服务端可以持续不断的发送数据给客户端，客户端边接收边处理，与“流”类似。与传统的HTTP请求响应“一次完成”不同，StreamableHTTP保持连接不关闭，数据分片持续传输。常见实现方式包括：
+    - HTTP/1.1 长连接+分块传输编码
+    - HTTP/2 流式数据
+    - HTTP/3 QUIC流式传输
+- 为什么HTTP+SSE要升级成Streamable HTTP？
+    - **数据格式限制问题**：SSE的text/event-stream只支持文本格式；Streamable HTTP的Content-Type支持任意格式，更适合AI场景
+    - **跨平台兼容问题**
