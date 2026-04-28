@@ -74,4 +74,5 @@ MCP遵循客户端-服务器架构，其中MCP Host——AI应用程序——与
     - HTTP/3 QUIC流式传输
 - 为什么HTTP+SSE要升级成Streamable HTTP？
     - **数据格式限制问题**：SSE的text/event-stream只支持文本格式；Streamable HTTP的Content-Type支持任意格式，更适合AI场景
-    - **跨平台兼容问题**
+    - **跨平台兼容问题**：SSE支持的客户端主要是浏览器和少量语言库；而StreamHTTP支持多种客户端
+    - **性能问题**：SSE是基于HTTP/1.1的长连接，Streamable HTTP可以基于HTTP/2/3,支持多路复用和双向流。且
