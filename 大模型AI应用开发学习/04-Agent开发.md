@@ -120,3 +120,6 @@ MCP遵循客户端-服务器架构，其中MCP Host——AI应用程序——与
 2. 运行流程
    ![[Plan-and-Execute Agent]]
 # LangGraph+MCP多智能体开发
+## 一、LangGraph
+### 快速了解LangGraph
+1. LangGraph是一个功能强大的大模型本地应用构建框架，但它并不是一个独立框架，而是LangChain框架的一个生态组件
