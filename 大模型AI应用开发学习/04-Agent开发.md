@@ -118,3 +118,4 @@ MCP遵循客户端-服务器架构，其中MCP Host——AI应用程序——与
     - 执行Agent
     - Agent主程序
 2. 运行流程
+   ![[Plan-and-Execute Agent]]
