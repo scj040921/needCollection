@@ -40,9 +40,9 @@
 2. **工具复用困难**：
    环境问题导致copy的代码不一定能跑；很多企业不提供源码；跨语言的代码copy了没用
 ### 什么是MCP（模型上下文协议）
-MCP是一个开放协议，用于标准化应用程序向大语言模型提供上下文的方式。借助MCP可以在LLM之上构建智能体和复杂工作流，并将模型与外部智能体相连接。
+- MCP是一个开放协议，用于标准化应用程序向大语言模型提供上下文的方式。借助MCP可以在LLM之上构建智能体和复杂工作流，并将模型与外部智能体相连接。
 ### MCP与Functioncalling的关系
-MCP本质上是对FunctionCalling进行了标准化而非替代关系，并在其基础上加入了Resources与Prompts。构建出一个即插即用的AI工具生态系统。
+- MCP本质上是对FunctionCalling进行了标准化而非替代关系，并在其基础上加入了Resources与Prompts。构建出一个即插即用的AI工具生态系统。
 ### MCP的核心架构
 MCP遵循客户端-服务器架构，其中MCP Host——AI应用程序——与一个或多个MCP Server建立连接，MCP主机通过为每个MCP Server创建一个MCP Client来实现这一目标。每个MCP Client都与相对应的MCP Server保持专用的一对一连接。MCP架构的主要组成者是：
 - **MCP Host**：协调和管理一个或多个MCP Server的人工智能应用程序
