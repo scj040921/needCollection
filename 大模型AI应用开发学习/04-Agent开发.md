@@ -121,7 +121,11 @@ MCP遵循客户端-服务器架构，其中MCP Host——AI应用程序——与
    ![[Plan-and-Execute Agent]]
 # LangGraph+MCP多智能体开发
 # 一、LangChain
-
+## 概述
+**LangChain**是一个用于开发由大语言模型驱动的应用程序的框架
+LangChain简化了LLM应用程序生命周期的每个阶段：
+- **开发**：使用LangChain的开源构建模块，组件和第三方集成构建应用程序，使用LangGraph构建具有一流流式处理和人机协作的有状态代理。
+- **生产化**：使用LangSmith检查、监控和评估链，以便持续优化和部署
 ## 二、LangGraph
 ### 快速了解LangGraph
 1. LangGraph是一个功能强大的大模型本地应用构建框架，但它并不是一个独立框架，而是LangChain框架的一个生态组件
