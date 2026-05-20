@@ -18,5 +18,8 @@
 - **容器隔离（Containerization）**
 ### Harness Engineer实现：
 - **Isolate(沙箱与工作区)**
-- 
-## 高性能 
+- **Subagents(子代理隔离)**
+## 可观测性
+## 传统工程解法：
+- **可观测性（Observability-Logs/Metrics/Traces）**
+- **Observe(链路追踪与反馈闭环)**
