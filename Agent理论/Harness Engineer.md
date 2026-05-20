@@ -21,5 +21,5 @@
 - **Subagents(子代理隔离)**
 ## 可观测性
 ## 传统工程解法：
-- **可观测性（Observability-Logs/Metrics/Traces）**
+- **可观测性（Observability-Logs*日志*/Metrics*折线图*/Traces*节点流程图*）**
 - **Observe(链路追踪与反馈闭环)**
