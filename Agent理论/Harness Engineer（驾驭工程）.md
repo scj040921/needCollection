@@ -7,10 +7,10 @@
 1. **Harness**:马具
 2. 一个完整的Agent去掉其中的大模型，剩下的部分就可以称为Harness(共识)
 3. 主要研究内容是围绕大模型开发一整套完整的系统
-# Anthropic 提出的full Harness架构：
+# Anthropic 提出的full Harness架构（成本高）：
 - **planner**:拆解需求
 - **Generator**:开发生成代码
-- **Evaluate**:对大模型生成的代码进行评审
+- **Evaluate**:对大模型生成的代码进行评审，反馈给Generator，进行修改，直到功能完善
 # 系统需求与解法
 ## 安全可控
 ### 传统工程解法：
