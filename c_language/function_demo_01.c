@@ -2,19 +2,18 @@
 #include<stdbool.h>
 bool judge(int a)
 {
+     if(a==2)
+        {
+            return true;
+        }
     for(int i=2;i*i<=a;i++)
     {
-        if(a==1||a==2)
-        {
-            return true;
-            break;
-        }
-        else if(a%i!=0)
-        {
-            return true;
-        }else
+        if(a%i==0)
         {
             return false;
+        }else
+        {
+            return true;
             break;
         }
     }
