@@ -4,7 +4,7 @@
   "commitMessageScript": "",
   "commitDateFormat": "YYYY-MM-DD HH:mm:ss",
   "autoSaveInterval": 1,
-  "autoPushInterval": 600,
+  "autoPushInterval": 0,
   "autoPullInterval": 0,
   "autoPullOnBoot": true,
   "autoCommitOnlyStaged": false,
@@ -19,11 +19,11 @@
   "syncMethod": "merge",
   "mergeStrategy": "none",
   "customMessageOnAutoBackup": false,
-  "autoBackupAfterFileChange": false,
+  "autoBackupAfterFileChange": true,
   "treeStructure": false,
   "refreshSourceControl": true,
   "basePath": "",
-  "differentIntervalCommitAndPush": true,
+  "differentIntervalCommitAndPush": false,
   "changedFilesInStatusBar": false,
   "showedMobileNotice": true,
   "refreshSourceControlTimer": 7000,
@@ -65,5 +65,5 @@
     "lastShownAuthorDisplay": "initials",
     "lastShownDateTimeFormatOptions": "date"
   },
-  "autoBackupInterval": 600
+  "autoBackupInterval": 0
 }
