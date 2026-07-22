@@ -3,7 +3,7 @@
   "interfaceFontFamily": "MiSans",
   "textFontFamily": "MiSans",
   "monospaceFontFamily": "MiSans",
-  "baseFontSize": 18,
+  "baseFontSize": 14,
   "baseFontSizeAction": true,
   "theme": "moonstone",
   "accentColor": ""
