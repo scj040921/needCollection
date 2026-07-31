@@ -117,3 +117,27 @@ bool listDel(linklist p)
 ### 3. 查找节点
 - 查找节点需要对节点间进行比对，比对过程与数据本身密切相关
 - 查找节点时节点的判定接口必须由用户提供，链表只提供回调接口
+```
+// 查找指定的节点，并使用用户提供的钩子函数 equal 来判定节点是否相同
+linklist find(linklist head, datatype data,
+                bool (*equal)(datatype, datatype))
+{
+    for(linklist tmp=head->next; tmp!=head; tmp=tmp->next)
+    {
+        if(equal(tmp->data, data))
+            return tmp;
+    }
+    return NULL;
+}
+```
+### 4. 遍历链表
+```
+void listForEach(linklist head, void (*handle)(datatype *))
+{
+    if(isEmpty(head))
+        return;
+
+    for(linklist tmp=head->next; tmp!=head; tmp=tmp->next)
+        handle(&tmp->data);
+}
+```
