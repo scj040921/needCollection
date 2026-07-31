@@ -113,4 +113,4 @@ bool listDel(linklist p)
     return true;
 }
 ```
-  
+  - 不需要对外提供函数接口
