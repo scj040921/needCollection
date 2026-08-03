@@ -213,3 +213,11 @@ pos = pos->next)
 for (pos = (head)->next, n = pos->next; pos != (head); \
 pos = n, n = pos->next)
 ```
+	安全主要体现在遍历时允许删除当前节点而不会导致后续的指针访问非法内存（使用临时指针变量n预存了下一个有效节点的地址）
+- **向后遍历链表的每一个节点并直接获得用户节点指针
+```
+#define list_for_each_entry(pos, head, member)                \
+for (pos = list_entry((head)->next, typeof(*pos), member);    \
+&pos->member != (head);                     \
+pos = list_entry(pos->member.next, typeof(*pos), member))
+```
