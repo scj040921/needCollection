@@ -235,3 +235,5 @@ pos = n, n = list_entry(n->member.next, typeof(*n), member))
 for (pos = (head)->prev; pos != (head); \
 pos = pos->prev)
 ```
+### 剔除节点
+- 剔除内核链表节点只意味着将某个节点脱离链表，并不意味着释放内存
