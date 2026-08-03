@@ -222,3 +222,11 @@ for (pos = list_entry((head)->next, typeof(*pos), member);    \
 pos = list_entry(pos->member.next, typeof(*pos), member))
 ```
 - **向后遍历每一个节点并直接获得用户节点指针安全版
+```
+#define list_for_each_entry_safe(pos, n, head, member)            \
+for (pos = list_entry((head)->next, typeof(*pos), member),    \
+n = list_entry(pos->member.next, typeof(*pos), member);    \
+&pos->member != (head);                     \
+pos = n, n = list_entry(n->member.next, typeof(*n), member))
+```
+- **向前遍历链表的每一个节点
