@@ -230,3 +230,8 @@ n = list_entry(pos->member.next, typeof(*pos), member);    \
 pos = n, n = list_entry(n->member.next, typeof(*n), member))
 ```
 - **向前遍历链表的每一个节点
+```
+#define list_for_each_prev(pos, head) \
+for (pos = (head)->prev; pos != (head); \
+pos = pos->prev)
+```
