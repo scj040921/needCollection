@@ -263,3 +263,4 @@ static inline void list_del_init(struct list_head *entry)
 }
 ```
 ### 移动节点
+- 移动节点的操作，实际上是先将节点剔除出链表，然后再插入某指定位置
