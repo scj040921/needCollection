@@ -141,3 +141,4 @@ void listForEach(linklist head, void (*handle)(datatype *))
         handle(&tmp->data);
 }
 ```
+# 2. 内核链表
