@@ -237,3 +237,28 @@ pos = pos->prev)
 ```
 ### 剔除节点
 - 剔除内核链表节点只意味着将某个节点脱离链表，并不意味着释放内存
+```
+// 内部函数
+static inline void __list_del(struct list_head *prev, struct list_head *next)
+{
+	next->prev = prev;
+	prev->next = next;
+}
+
+// 将指定节点 entry 从链表结构中剔除
+// 并将其前后指针置空
+static inline void list_del(struct list_head *entry)
+{
+	__list_del(entry->prev, entry->next);
+	entry->next = (void *) 0;
+	entry->prev = (void *) 0;
+}
+
+// 将指定节点 entry 从链表结构中剔除
+// 并将其前后指针指向自身
+static inline void list_del_init(struct list_head *entry)
+{
+	__list_del(entry->prev, entry->next);
+	INIT_LIST_HEAD(entry);
+}
+```
