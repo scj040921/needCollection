@@ -221,3 +221,4 @@ for (pos = list_entry((head)->next, typeof(*pos), member);    \
 &pos->member != (head);                     \
 pos = list_entry(pos->member.next, typeof(*pos), member))
 ```
+- **向后遍历每一个节点并直接获得用户节点指针安全版
