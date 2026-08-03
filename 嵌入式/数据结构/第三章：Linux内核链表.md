@@ -164,4 +164,9 @@ void listForEach(linklist head, void (*handle)(datatype *))
 - 实际应用中采用标准节点的内核链表都是带头节点的
 ### 大小结构体转换
 - 内核链表的操作都只针对标准的小结构体，与包裹他的大结构体无关，所以用户想要操作数据就需要进行大小结构体的转换
-- 通过计算小结构体相对大结构体的地址偏移量
+- 通过计算小结构体相对大结构体的地址偏移量，再用指向小结构体的指针减去偏移量就可以的到指向大结构体的指针
+```
+#define list_entry(ptr, type, member) \
+((type *)((char *)(ptr)-(unsigned long)(&((type *)0)->member)))
+```
+### 插入节点
