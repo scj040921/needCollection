@@ -200,3 +200,16 @@ static inline void list_add_tail(struct list_head *new, struct list_head *head)
 }
 ```
 - 实际应用中，用户针对大结构体中的标准节点进行操作
+### 遍历链表
+- **向后遍历链表每一个节点**(遍历过程不可删除节点)：
+```
+#define list_for_each(pos, head) \
+for (pos = (head)->next; pos != (head); \
+pos = pos->next)
+```
+- **安全向后遍历每一个节点**（支持边遍历边删除节点）：
+```
+#define list_for_each_safe(pos, n, head) \
+for (pos = (head)->next, n = pos->next; pos != (head); \
+pos = n, n = pos->next)
+```
