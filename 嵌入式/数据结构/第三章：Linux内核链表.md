@@ -262,3 +262,4 @@ static inline void list_del_init(struct list_head *entry)
 	INIT_LIST_HEAD(entry);
 }
 ```
+### 移动节点
