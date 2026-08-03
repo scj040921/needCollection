@@ -170,3 +170,33 @@ void listForEach(linklist head, void (*handle)(datatype *))
 ((type *)((char *)(ptr)-(unsigned long)(&((type *)0)->member)))
 ```
 ### 插入节点
+- 内核链表的标准操作中提供了头插法和尾插法
+```
+// 内部函数
+// 将节点new插入到prev与next之间
+// 注意，所有的指针都是标准节点指针，与用户数据无关
+static inline void __list_add(struct list_head *new,
+				struct list_head *prev,
+				struct list_head *next)
+{
+	next->prev = new;
+	new->next = next;
+	new->prev = prev;
+	prev->next = new;
+}
+
+// 将新节点new插入到链表head的首部
+// 即:插入到head的后面
+static inline void list_add(struct list_head *new, struct list_head *head)
+{
+	__list_add(new, head, head->next);
+}
+
+// 将新节点new插入到链表head的尾部
+// 即:插入到head的前面
+static inline void list_add_tail(struct list_head *new, struct list_head *head)
+{
+	__list_add(new, head->prev, head);
+}
+```
+- 实际应用中，用户针对大结构体中的标准节点进行操作
