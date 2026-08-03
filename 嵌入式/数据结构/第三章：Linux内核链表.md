@@ -142,3 +142,6 @@ void listForEach(linklist head, void (*handle)(datatype *))
 }
 ```
 # 2. 内核链表
+## 普通链表的弊端
+- 不具有通用性，更换数据要全部重写
+- 操作链表的函数只能操作指定的参数类型
