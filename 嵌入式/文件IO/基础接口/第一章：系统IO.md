@@ -118,4 +118,7 @@
 	- fd：要调整位置偏移量的文件的描述符
 	- offset：新位置便宜量相对基准点的偏移
 	- whence:基准点
-		- SEEK_SET
+		- SEEK_SET:文件开头处
+		- SEEK_CUR:当前位置
+		- SEEK_END:文件末尾处
+- **返回值**
