@@ -170,4 +170,5 @@
 	- fcntl是个变参函数，前两个参数是固定的，后续的参数个数和类型取决于cmd的具体数值
 ## mmap()
 - **功能**：内存映射，讲某个文件与某块内存关联起来，达到通过操作内存间接操作其所对应的文件的效果
-- **原型**：void \*mmap(void \*addr,size)
+- **原型**：void \*mmap(void \*addr,size_t length,int port,int flags,int fd,off_t offset);
+- 
