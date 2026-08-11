@@ -32,3 +32,4 @@
 	- int open(const char \*pathname,int flags,mode_t mode)
 - **参数**：
 	- pathname：即将要打开的文件
+	- 
