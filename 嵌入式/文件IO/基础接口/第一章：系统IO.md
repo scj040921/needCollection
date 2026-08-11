@@ -173,3 +173,9 @@
 - **原型**：void \*mmap(void \*addr,size_t length,int port,int flags,int fd,off_t offset);
 - **参数**
 	- addr:映射内存的起始地址，如果该参数为NULL，系统会自动寻找一个合适的起始地址，若该参数不为NULL，则系统会以此为依据找一个合适的起始地址。在Linux中，映射后的内存地址必须是页地址的整数倍。
+	- length：映射内存大小
+	- prot：映射内存的保护权限
+		- PROT_EXEC：可执行
+		- PROT_READ：可读
+		- PROT_WRITE：可写
+		- PORT_NONE：不可访问
