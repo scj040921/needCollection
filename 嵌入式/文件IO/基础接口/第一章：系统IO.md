@@ -116,4 +116,6 @@
 - **原型**：off_t lseek(int fd,off_t offset,int whence);
 - **参数**：
 	- fd：要调整位置偏移量的文件的描述符
-	- 
+	- offset：新位置便宜量相对基准点的偏移
+	- whence:基准点
+		- SEEK_SET
