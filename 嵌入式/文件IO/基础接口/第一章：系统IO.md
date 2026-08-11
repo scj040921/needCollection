@@ -37,4 +37,5 @@
 		- O_WRONLY：只写方式打开文件
 		- O_RDWR:读写方式打开文件
 		- O_CREAT:如果文件不存在，则创建该文件
-		- O_EXCL:如果使用O_CTEAT选项且该文件存在，则返回cuo
+		- O_EXCL:如果使用O_CTEAT选项且该文件存在，则返回错误消息
+		- O_NOCTTY:当文件为终端时，阻止gai'zhong'da
