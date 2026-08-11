@@ -113,4 +113,7 @@
 ## 读写位置的设置
 - 对文件进行常规的读写操作时，系统会自动调整读写位置
 - **功能**：调整文件位置偏移量
-- **原型**：off_t lseek(int fd,off_t offset)
+- **原型**：off_t lseek(int fd,off_t offset,int whence);
+- **参数**：
+	- fd：要调整位置偏移量的文件的描述符
+	- 
