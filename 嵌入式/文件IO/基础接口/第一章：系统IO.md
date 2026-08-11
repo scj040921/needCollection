@@ -29,4 +29,4 @@
 - **功能**：打开一个指定的文件并获得文件描述符，或者创建一个新文件
 - **原型**：
 	- int open(const char \*pathname,int flags);
-	- int open(const char \*pathname,int flags,
+	- int open(const char \*pathname,int flags,mode_t mode)
