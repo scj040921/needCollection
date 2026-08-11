@@ -30,3 +30,4 @@
 - **原型**：
 	- int open(const char \*pathname,int flags);
 	- int open(const char \*pathname,int flags,mode_t mode)
+- **
