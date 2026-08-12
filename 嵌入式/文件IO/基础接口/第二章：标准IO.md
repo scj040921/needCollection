@@ -32,4 +32,10 @@
 	- **原型**
 		- int fgetc(FILE \*stream);
 		- int getc(FILE \*stream);
-		- 
+		- int getxhar(void);
+	- **参数**：stream：为文件指针
+	- **返回值**：
+		- 成功：读取到的字符
+		- 失败：EOF
+	- 当返回EOF时，文件stream可能已到达末尾，或者遇到错误
+- **按字节写**
