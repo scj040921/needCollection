@@ -51,4 +51,6 @@
 		- 成功：写入的字符
 		- EOF
 - **关键点**：
-	- fgetc与getc功能完全一样，区别是fgetc是函数
+	- fgetc与getc功能完全一样，区别是fgetc是函数getc是宏
+	- fputc和putc的功能也完全一样，fputc是函数putc是宏
+	- 
