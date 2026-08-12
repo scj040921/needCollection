@@ -53,4 +53,4 @@
 - **关键点**：
 	- fgetc与getc功能完全一样，区别是fgetc是函数getc是宏
 	- fputc和putc的功能也完全一样，fputc是函数putc是宏
-	- 
+	- getchar和putchar只能针对键盘输入和屏幕输出，不能指定别的文件
