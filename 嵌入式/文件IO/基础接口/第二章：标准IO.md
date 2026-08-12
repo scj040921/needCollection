@@ -60,3 +60,6 @@
 	- **原型**：
 		- char \*fgets(char \*s,int size,FILE \*stream);
 		- char \*gets(char \*s);
+	- **参数**：
+		- s：自定义缓冲区指针
+		- 
