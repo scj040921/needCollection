@@ -40,3 +40,15 @@
 	- 当返回EOF时，文件stream可能已到达末尾，或者遇到错误
 - **按字节写**
 	- **功能**：将一个字符写入一个指定的文件
+	- **原型**：
+		- int fputc(int c,FILE \*stream);
+		- int putc(int c,FILE \*stream);
+		- int putchar(int c);
+	- **参数**：
+		- c：要写入的字符
+		- stream：写入的文件指针
+	- **返回值**：
+		- 成功：写入的字符
+		- EOF
+- **关键点**：
+	- fgetc与getc功能完全一样，区别是fgetc是函数
