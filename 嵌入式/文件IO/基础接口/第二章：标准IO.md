@@ -71,3 +71,5 @@
 	- 当返回NULL时，文件stream可能已达末尾，或者遇到错误
 - **写入**：
 	- **功能**：将数据写入指定的文件
+	- **原型**：
+		- int fputs(const char \*s,FILE \*stream)
