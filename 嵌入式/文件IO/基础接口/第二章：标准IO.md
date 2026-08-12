@@ -57,4 +57,6 @@
 ### 按行读取文本文件
 - **读取**
 	- **功能**：从指定文件读取最多一行数据
-	- **原型**
+	- **原型**：
+		- char \*fgets(char \*s,int size,FILE \*stream);
+		- char \*gets(char \*s);
