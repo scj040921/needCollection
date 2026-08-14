@@ -169,4 +169,5 @@
 	- 失败：-1
 ### 获取文件位置
 - **功能**：获取指定文件当前位置偏移量
-- **原型**：long ftell(FILE \*s)
+- **原型**：long ftell(FILE \*stream);
+- **参数**：stream：需要返回当前文件位置【i'an'yi'lian
