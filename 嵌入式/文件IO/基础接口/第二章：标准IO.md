@@ -130,3 +130,6 @@
 ### 按数据块读写文件
 - **读取文件**
 	- **功能**：从指定文件中读取若干个数据块
+	- **原型**：size_t fread(void \*ptr,size_t size,size_t nmemb,FILE \*stream);
+	- **参数**：
+		- 
