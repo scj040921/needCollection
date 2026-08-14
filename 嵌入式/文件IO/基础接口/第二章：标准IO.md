@@ -72,4 +72,17 @@
 - **写入**：
 	- **功能**：将数据写入指定的文件
 	- **原型**：
-		- int fputs(const char \*s,FILE \*stream)
+		- int fputs(const char \*s,FILE \*stream)；
+		- int puts(const char \*s);
+	- **参数**：
+		- s：自定义缓冲区指针
+		- stream：即将被写入数据的文件指针
+	- **返回值**：
+		- 成功：非负整数
+		- 失败：EOF
+	- puts缺省将数据写入文件stdout
+- **关键点**：
+	- 对于读操作，返回EOF意味着读操作失败，有两种情况：
+		1. 如果feof(fp)为真，意味着读到了文件末尾，没有数据可读
+		2. 如果ferror(fp)为真，意味着遇到了错误
+	- 
