@@ -89,4 +89,19 @@
 		- fgets()可以读取任意指定的文件，而gets()只能从键盘读取
 		- fgets()内存在边界判断，而gets()没有，因此后者是不安全的，不建议使用
 		- fgets()任何情况下都按原样读取数据，gets()会自动去除数据末尾的‘\n’
-	- 
+	- fputs()与puts()的区别：
+		- fputs()可以将数据写入任意指定文件，而puts()只能将数据输出到屏幕
+		- fputs()在任何情形下都按原样写入数据，puts()会给数据末尾加上'\n'
+### 按指定格式读写文本文件
+- **写文件**
+	- **功能**：将格式化数据写入指定的文件或内存
+	- **原型**：
+		- int fprintf(FILE \*retrict stream,const char \*restrict format,...);
+		- int printf(const char \*restrict format,...);
+		- int snprintf(char \*restrict s,size_t n,const char \*restrict format,...);
+		- int sprintf(char \*restrict s,const char \*restrict format,...);
+	- **参数**
+		- stream：写入数据的文件指针
+		- format：格式控制串
+		- s：写入数据的自定义缓冲
+		- n：自定义缓冲区的大小
