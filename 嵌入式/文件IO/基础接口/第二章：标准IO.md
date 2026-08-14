@@ -160,3 +160,7 @@
 - **参数**：
 	- stream：需要设置位置偏移量的文件指针
 	- offset：新位置偏移量相对基准点的偏移
+	- whence：基准点
+		- SEEK_SET：文件开头
+		- SEEK_CUR：当前位置
+		- SEEK_END：文件末尾
