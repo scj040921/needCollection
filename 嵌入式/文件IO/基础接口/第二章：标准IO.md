@@ -132,4 +132,6 @@
 	- **功能**：从指定文件中读取若干个数据块
 	- **原型**：size_t fread(void \*ptr,size_t size,size_t nmemb,FILE \*stream);
 	- **参数**：
-		- 
+		- ptr：自定义缓冲区指针
+		- size：数据块大小
+		- nmemb：数据块个数
