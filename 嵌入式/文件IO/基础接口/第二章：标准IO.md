@@ -156,4 +156,6 @@
 ## 文件位置的获取与设定
 ### 设置文件位置
 - **功能**：设置指定文件的当前位置偏移量
-- **原型**：int fsee
+- **原型**：int fseek(FILE \*stream,long offset,int whence);
+- **参数**：
+	- 
