@@ -108,3 +108,18 @@
 	- **返回值**
 		- 成功：成功写入的字节数
 		- 失败：-1
+- **读文件**
+	- **功能**：从指定的文件或内存中读取格式化数据
+	- **原型**：
+		- int fscanf(FILE \*restrict stream,const char \*restrict format,...);
+		- int scanf(const char \*restrict format,...);
+		- int sscanf(const char \*restrict s,const char \*restrict format,...);
+	- **参数**：
+		- stream：读出数据的文件指针
+		- format：格式控制串
+		- s：读出数据的自定义缓冲区
+	- **返回值**
+		- 成功：正确匹配且赋值的数据个数
+		- 失败：EOF
+- **关键点**：
+	1. fprintf()不仅可以像printf()一样输出设备输出信息，也可以向有strea指定的任何有相应权限的文件写入数据
