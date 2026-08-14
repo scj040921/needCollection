@@ -158,4 +158,5 @@
 - **功能**：设置指定文件的当前位置偏移量
 - **原型**：int fseek(FILE \*stream,long offset,int whence);
 - **参数**：
-	- 
+	- stream：需要设置位置偏移量的文件指针
+	- offset：新位置偏移量相对基准点的偏移
