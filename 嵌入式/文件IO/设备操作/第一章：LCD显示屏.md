@@ -58,3 +58,4 @@ struct rgb_quad
 	int8_t reserved;
 }__attribute__((packed));
 ```
+### 特殊规则
