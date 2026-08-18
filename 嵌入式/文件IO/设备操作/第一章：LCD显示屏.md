@@ -14,3 +14,47 @@
 	- LCD上显示的图像色彩，由其对应的内存数据决定
 	- 映射内存的大小至少等于LCD真实尺寸的大小
 	- 映射内存的大小可以大于LCD的真实尺寸，有利于优化动态画面体验
+# 2.BMP格式图片处理
+## BMP格式简介
+- 无压缩的RGB数据封装格式，数据读出来就可以直接使用，不需要额外的解码
+### BMP格式头
+- BMP格式头中包含了以下三个结构体：
+	- bitmap_header
+	- bitmap_info
+	- rgb_quad
+```
+struct bitmap_header
+{
+	int16_t type;
+	int32_t size; // 图像文件大小
+	int16_t reserved1;
+	int16_t reserved2;
+	int32_t offbits; // bmp图像数据偏移量
+}__attribute__((packed));
+
+struct bitmap_info
+{
+	int32_t size;   // 本结构大小	
+	int32_t width;  // 图像宽
+	int32_t height; // 图像高
+	int16_t planes;
+
+	int16_t bit_count; // 色深
+	int32_t compression;
+	int32_t size_img; // BMP文件中的RGB数据大小，必须是4的整数倍
+	int32_t X_pel;
+	int32_t Y_pel;
+	int32_t clrused;
+	int32_t clrImportant;
+}__attribute__((packed));
+
+// 以下结构体不一定存在于BMP文件中，除非：
+// bitmap_info.compression为真
+struct rgb_quad
+{
+	int8_t blue;
+	int8_t green;
+	int8_t red;
+	int8_t reserved;
+}__attribute__((packed));
+```
