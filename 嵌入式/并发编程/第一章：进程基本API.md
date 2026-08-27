@@ -65,4 +65,6 @@
 	- WNOHANG：若没有僵尸进程则函数立即返回
 	- WUNTRACED：当子进程暂停时函数返回
 	- WCONTINUED：当子进程收到信号SIGCONT继续运行时函数返回
+## 加载并执行指定程序
+
 
