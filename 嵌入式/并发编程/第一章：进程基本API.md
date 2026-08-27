@@ -54,4 +54,7 @@
 - **其它接口**：
 	- pid_t waitpid(pid_t pid,int \*wstatus,int options);
 	- 可以通过参数pid指定想要回收的子进程
+	- 可以通过options来指定非阻塞等待
+- **PID取值**：
+	- 《-1
 
