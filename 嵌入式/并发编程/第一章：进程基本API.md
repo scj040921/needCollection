@@ -51,4 +51,6 @@
 		WEXITSTATUS(status)      获取正常退出的子进程的退出值 
 		WIFSIGNALED(status)      判断子进程是否被信号杀死   
 		WTERMSIG(status)           获取杀死子进程的信号的值   
+- **其它接口**：
+	- pid_t waitpid(pid_t pid,int *)
 
