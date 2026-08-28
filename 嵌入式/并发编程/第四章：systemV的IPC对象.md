@@ -76,3 +76,5 @@ ipcrm -s id： 删除指定的信号量
 	    - IPC_NOWAIT：非阻塞接收模式，在MSG中无指定类型消息时直接退出函数并设置错误码为ENOMSG.
 	    - MSG_EXCEPT：读取除msgtyp之外的第一个消息。
 	    - MSG_NOERROR：如果待读取的消息尺寸比msgsz大，直接切割消息并返回msgsz部分，读不下的部分直接丢弃。若没有设置该项，则函数将出错返回并设置错误码为E2BIG。
+#### 其它操作
+- 
