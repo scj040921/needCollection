@@ -43,3 +43,21 @@ ipcrm -s id： 删除指定的信号量
 - ftok()函数参数中的路径仅仅是产生键值key的参数，与实际文件系统并无关系。
 - 若 msgget() 中的key写成 IPC_PRIVATE，那意味着新建一个私有的IPC对象，该对象只在本进程内部可见，与外部的系统MSG对象不会冲突。
 #### 向MSG对象发送消息
+- int msgsnd(int msqid,const void \*msgp,size_t msgsz,int msgflg);
+- 接口说明：
+	- msgqid：MSG对象的ID，由msgget()获取
+	- msgp：一个指向等待被发送的消息的指针，由于MSG中的消息最大的特点是必须有一个整数标识，用以区分MSG中的不同的消息，因此MSG的消息会使用一个特别的结构体来表达，具体如下所示：
+	```
+	struct msgbuf
+	{
+	// 消息类型（固定）
+	long mtype;
+	
+	// 消息正文（可变）
+	// ...
+	};
+	```
+	- msgsz：消息正文的长度，不含类型长度
+	- msgflg：发送选项：
+		-  0：默认发送模式，在MSG缓冲区已满的情况下阻塞，直到缓冲区可用
+		- IPC_NOWAIT：非阻塞发送模式，在MSG缓冲区已满的情形下直接退出函数并设置错误码为EAGAIN.
