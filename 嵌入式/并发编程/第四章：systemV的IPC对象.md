@@ -81,7 +81,7 @@ ipcrm -s id： 删除指定的信号量
 - int msgctl(int msqid, int cmd, struct msqid_ds \*buf);
 - 接口说明：
 	- msqid：MSG对象ID
-- cmd：控制命令字
-    - IPC_STAT：获取该MSG的信息，储存在结构体msqid_ds中
-    - IPC_SET：设置该MSG的信息，储存在结构体msqid_ds
-    - IPC_RMID：立即删除该MSG，并且唤醒所有阻塞在该MSG上的进程，同时忽略第三个参数
+	- cmd：控制命令字
+	    - IPC_STAT：获取该MSG的信息，储存在结构体msqid_ds中
+	    - IPC_SET：设置该MSG的信息，储存在结构体msqid_ds
+	    - IPC_RMID：立即删除该MSG，并且唤醒所有阻塞在该MSG上的进程，同时忽略第三个参数
