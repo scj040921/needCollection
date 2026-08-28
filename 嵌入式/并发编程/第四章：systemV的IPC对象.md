@@ -35,4 +35,8 @@ ipcrm -s id： 删除指定的信号量
 - int msgget(key_t key,int msgflg);
 - 接口说明：
 	- 返回值：消息队列MSG对象ID
-	- 参数key：键值，全局唯一标识
+	- 参数key：键值，全局唯一标识，可由ftok()产生
+	- 参数msgflg：操作模式与读写权限
+- key实质上就是一个整数
+- key_t ftok(const char \*pathname,int proj_id);
+- 对于ftok函数参数，路径和序号一样时产生的key也是一样的
