@@ -121,3 +121,11 @@ ipcrm -s id： 删除指定的信号量
 	- int shmdt(const void \*shmaddr);
 ### 其余操作
 - 与其它IPC对象一样，共享内存也有一个control函数，可用于设置SHM对象属性信息、删除SHM对象等其余操作
+- int shmctl(int shmid,int cmd, struct shmid_ds \*buf);
+- 接口说明：
+	- shmid：指定的共享内存ID
+	- cmd：一些命令字
+		- IPC_STAT：获取共享内存的一些信息，放入shmid_ds{}中
+		- IPC_SET：将buf中指定的信息设置到本共享内存中
+		- IPC_RMID：删除指定的共享内存，此时第三个参数将被忽略
+	- buf：用来存放共享内存信息的结构体
