@@ -77,4 +77,11 @@ ipcrm -s id： 删除指定的信号量
 	    - MSG_EXCEPT：读取除msgtyp之外的第一个消息。
 	    - MSG_NOERROR：如果待读取的消息尺寸比msgsz大，直接切割消息并返回msgsz部分，读不下的部分直接丢弃。若没有设置该项，则函数将出错返回并设置错误码为E2BIG。
 #### 其它操作
-- 
+- PC对象是一种持久性资源，如果没有明确的删除掉他们，他们是不会自动从内存中消失的，除了可以使用命令的方式删除，可以使用函数来删除
+- int msgctl(int msqid, int cmd, struct msqid_ds \*buf);
+- 接口说明：
+	- msqid：MSG对象ID
+- cmd：控制命令字
+    - IPC_STAT：获取该MSG的信息，储存在结构体msqid_ds中
+    - IPC_SET：设置该MSG的信息，储存在结构体msqid_ds
+    - IPC_RMID：立即删除该MSG，并且唤醒所有阻塞在该MSG上的进程，同时忽略第三个参数
