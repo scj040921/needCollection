@@ -117,3 +117,5 @@ ipcrm -s id： 删除指定的信号量
 	        - SHM_RDONLY：代表共享内存只读。
 	- 返回值：
 	    - 共享内存映射后的虚拟地址入口。
+	- 使用完SHM之后，需要将其跟进程解除关联关系
+	- int shmdt(const void \*shmaddr);
