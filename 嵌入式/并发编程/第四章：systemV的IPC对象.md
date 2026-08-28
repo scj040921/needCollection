@@ -40,3 +40,6 @@ ipcrm -s id： 删除指定的信号量
 - key实质上就是一个整数
 - key_t ftok(const char \*pathname,int proj_id);
 - 对于ftok函数参数，路径和序号一样时产生的key也是一样的
+- ftok()函数参数中的路径仅仅是产生键值key的参数，与实际文件系统并无关系。
+- 若 msgget() 中的key写成 IPC_PRIVATE，那意味着新建一个私有的IPC对象，该对象只在本进程内部可见，与外部的系统MSG对象不会冲突。
+#### 向MSG对象发送消息
