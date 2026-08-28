@@ -61,3 +61,6 @@ ipcrm -s id： 删除指定的信号量
 	- msgflg：发送选项：
 		-  0：默认发送模式，在MSG缓冲区已满的情况下阻塞，直到缓冲区可用
 		- IPC_NOWAIT：非阻塞发送模式，在MSG缓冲区已满的情形下直接退出函数并设置错误码为EAGAIN.
+#### 从MSG对象接收消息
+- ssize_t msgrcv(int msqid, void \*msgp, size_t msgsz, long msgtyp, int msgflg);
+- 
