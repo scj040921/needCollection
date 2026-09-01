@@ -38,3 +38,6 @@ int socket(int domain,int type,int protocol);
 	- type：套接字的类型
 		- tcp：SOCK_STREAM
 		- udp：SOCK_DGRAM
+	- protocol：扩展协议一般设置0
+### 绑定ip和端口值
+int bind(int sockfd,const struct sockaddr*\addr,socklen_t addrlen)
