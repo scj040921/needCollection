@@ -57,4 +57,5 @@ int bind(int sockfd,const struct sockaddr\*addr,socklen_t addrlen)
 ### 字节序的转换
 - **概念**：
 	- 计算机网络中数据采用大端序存放：网络字节序
-	- linux
+	- Linux中数据采用小端序存放：主机字节序
+	- 
