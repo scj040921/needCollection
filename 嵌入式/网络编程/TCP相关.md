@@ -48,4 +48,5 @@ int bind(int sockfd,const struct sockaddr*\addr,socklen_t addrlen)
 		- struct sockaddr_in6 ipv6地址结构体
 		- struct sockaddr_in ipv4地址结构体
 		- 结构体内容：
-			- sin_family：存放地址协议
+			- sin_family：存放地址协议AF_INET或者PF_INET
+			- 
