@@ -58,4 +58,8 @@ int bind(int sockfd,const struct sockaddr\*addr,socklen_t addrlen)
 - **概念**：
 	- 计算机网络中数据采用大端序存放：网络字节序
 	- Linux中数据采用小端序存放：主机字节序
-	- 
+- bind函数绑定本地主机时将ip和端口号转为大端序in_addr_t inet_addr(const char*)
+- accept成功之后打印客户端的ip和端口需要大端序转小端序char \*inet_ntoa(strut in_addr )
+### 连接
+int connect(int socket,const struct sockaddr \*address,socklen_t address_len)
+- **参数**：address：存放服务器的ip和端口号
