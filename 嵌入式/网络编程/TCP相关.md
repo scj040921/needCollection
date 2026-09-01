@@ -63,3 +63,5 @@ int bind(int sockfd,const struct sockaddr\*addr,socklen_t addrlen)
 ### 连接
 int connect(int socket,const struct sockaddr \*address,socklen_t address_len)
 - **参数**：address：存放服务器的ip和端口号
+### 监听
+int listen(int socket,int backlog)
