@@ -53,4 +53,4 @@ int bind(int sockfd,const struct sockaddr\*addr,socklen_t addrlen)
 			- sin_port：存放要绑定的端口号
 		- addrlen：地址结构体的大小
 - **注意**：
-	- 宏定义INADDR_ANY在绑定的时候会帮助我们寻找ben'di
+	- 宏定义INADDR_ANY在绑定的时候会帮助我们寻找本地主机中的任意ip地址帮我们绑定
