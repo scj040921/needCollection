@@ -71,4 +71,7 @@ int accept(int socket,const struct sockaddr \*address,socklen_t address_len)
 - **返回值**：
 	- 成功返回新的套接字，用于和对应客户端通信失败返回-1
 - **参数**：
-	- address
+	- address：存放对方的ip和端口号
+	- address_len：地址的大小要求指针
+- 如果没有客户端连接服务器服务器会阻塞在这里
+## 出现的一些问题
