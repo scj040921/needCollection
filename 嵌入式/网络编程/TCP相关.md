@@ -33,3 +33,8 @@
 ## 2.相关的接口函数
 ### 创建tcp套接字
 int socket(int domain,int type,int protocol);
+- **参数**：
+	- domain：地址协议类型
+	- type：套接字的类型
+		- tcp：SOCK_STREAM
+		- udp：SOCK_DGRAM
