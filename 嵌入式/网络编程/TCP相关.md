@@ -66,3 +66,9 @@ int connect(int socket,const struct sockaddr \*address,socklen_t address_len)
 ### 监听
 int listen(int socket,int backlog)
 - **参数**：backlog：同时最多允许多少个客户端连接服务器
+### 接受客户端的连接请求
+int accept(int socket,const struct sockaddr \*address,socklen_t address_len)
+- **返回值**：
+	- 成功返回新的套接字，用于和对应客户端通信失败返回-1
+- **参数**：
+	- address
