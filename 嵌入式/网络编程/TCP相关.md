@@ -40,7 +40,7 @@ int socket(int domain,int type,int protocol);
 		- udp：SOCK_DGRAM
 	- protocol：扩展协议一般设置0
 ### 绑定ip和端口值
-int bind(int sockfd,const struct sockaddr、*addr,socklen_t addrlen)
+int bind(int sockfd,const struct sockaddr\*addr,socklen_t addrlen)
 - **参数**：
 	- sockfd：套接字的文件描述符
 	- addr：
@@ -50,4 +50,5 @@ int bind(int sockfd,const struct sockaddr、*addr,socklen_t addrlen)
 		- 结构体内容：
 			- sin_family：存放地址协议AF_INET或者PF_INET
 			- struct in_addr sinaddr：存放要绑定的ip地址
-			- sin_port：存放要绑定的
+			- sin_port：存放要绑定的端口号
+		- addrlen
