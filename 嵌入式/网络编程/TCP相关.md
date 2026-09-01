@@ -65,4 +65,4 @@ int connect(int socket,const struct sockaddr \*address,socklen_t address_len)
 - **参数**：address：存放服务器的ip和端口号
 ### 监听
 int listen(int socket,int backlog)
-- **参数**：backlog：同时最多允许多少个客户端连接fu'wu'q
+- **参数**：backlog：同时最多允许多少个客户端连接服务器
