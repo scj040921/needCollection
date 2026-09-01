@@ -54,4 +54,7 @@ int bind(int sockfd,const struct sockaddr\*addr,socklen_t addrlen)
 		- addrlen：地址结构体的大小
 - **注意**：
 	- 宏定义INADDR_ANY在绑定的时候会帮助我们寻找本地主机中的任意ip地址帮我们绑定
-###
+### 字节序的转换
+- **概念**：
+	- 计算机网络中数据采用大端序存放：网络字节序
+	- linux
