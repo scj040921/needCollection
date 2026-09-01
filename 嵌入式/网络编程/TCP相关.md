@@ -32,3 +32,4 @@
 - 关闭连接
 ## 2.相关的接口函数
 ### 创建tcp套接字
+int socket(int domain,int type,int protocol);
