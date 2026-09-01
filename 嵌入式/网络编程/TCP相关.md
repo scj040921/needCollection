@@ -51,4 +51,6 @@ int bind(int sockfd,const struct sockaddr\*addr,socklen_t addrlen)
 			- sin_family：存放地址协议AF_INET或者PF_INET
 			- struct in_addr sinaddr：存放要绑定的ip地址
 			- sin_port：存放要绑定的端口号
-		- addrlen
+		- addrlen：地址结构体的大小
+- **注意**：
+	- 宏定义INADDR_ANY在绑定的时候会帮助我们寻找ben'di
