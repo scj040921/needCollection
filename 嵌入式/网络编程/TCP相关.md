@@ -41,3 +41,11 @@ int socket(int domain,int type,int protocol);
 	- protocol：扩展协议一般设置0
 ### 绑定ip和端口值
 int bind(int sockfd,const struct sockaddr*\addr,socklen_t addrlen)
+- **参数**：
+	- sockfd：套接字的文件描述符
+	- addr：
+		- struct sockaddr 通用地址结构体
+		- struct sockaddr_in6 ipv6地址结构体
+		- struct sockaddr_in ipv4地址结构体
+		- 结构体内容：
+			- sin_family：存放地址协议
