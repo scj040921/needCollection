@@ -45,3 +45,25 @@ struct Header { uint32_t magic, len; uint16_t type, ver; };
 | `TCP_NODELAY` | 关闭 Nagle，降低小包延迟 | 必然提升总吞吐 |
 
 嵌入式端要有连接超时、读写超时、心跳、断线重连和发送队列上限；网络抖动不能无限堆积内存。
+
+## 深入讲解：半包、粘包与接收缓冲
+
+`recv()` 的返回值只是“当前内核缓冲中取到了多少字节”，不是“取到一条消息”。一个长度为 100 的业务包可能分三次到达；反过来，两条业务包也可能一次到达。因此接收缓冲必须跨多次调用保存数据。
+
+```c
+while (rx_size() >= HEADER_SIZE) {
+    uint32_t len = read_be32(rx_data() + 4); // 取网络序长度
+    if (len == 0 || len > 4096) { close_bad_peer(); break; }
+    if (rx_size() < HEADER_SIZE + len) break; // 半包：等下一次 EPOLLIN
+    handle_frame(rx_data() + HEADER_SIZE, len);
+    rx_consume(HEADER_SIZE + len);            // 继续处理缓冲中的下一帧
+}
+```
+
+帧头至少应有长度、版本和消息类型；长度必须设置上限，否则恶意对端可宣称超大载荷，造成内存耗尽。处理函数若需异步保存数据，必须复制/转移所有权，不能保留即将被缓冲复用的裸地址。
+
+## 深入讲解：短写与优雅关闭
+
+`send()` 也可能只写入部分数据。非阻塞 fd 遇到 `EAGAIN` 意味着暂时写不进，应保留“已发送偏移”，等待 `EPOLLOUT` 后续传，不能把未发送的尾部丢掉。`EINTR` 通常重试；`EPIPE/ECONNRESET` 说明连接已不可用。
+
+主动关闭前若需要尽力送完回复：停止接收新请求 → 刷发送队列 → `shutdown(fd, SHUT_WR)` → 等待对端 EOF/超时 → `close`。实时控制场景则可以直接关闭，关键是把策略定义清楚。
